@@ -4,7 +4,7 @@
 
 struct Timer
 {
-	std::chrono::time_point< std::chrono::steady_clock> start, end;
+	std::chrono::time_point< std::chrono::steady_clock > start, end;
 	std::chrono::duration< float > duration;
 
 	Timer()
@@ -23,6 +23,34 @@ struct Timer
 	}
 };
 
+struct Timer2
+{
+	std::chrono::time_point< std::chrono::steady_clock > startTimePoint;
+
+	Timer2()
+	{
+		startTimePoint = std::chrono::high_resolution_clock::now();
+	}
+
+	void stop()
+	{
+		auto endTimePoint = std::chrono::high_resolution_clock::now();
+
+		auto start = std::chrono::time_point_cast< std::chrono::microseconds >( startTimePoint ).time_since_epoch().count();
+		auto end = std::chrono::time_point_cast< std::chrono::microseconds >( endTimePoint ).time_since_epoch().count();
+
+		auto duration = end - start;
+		double ms = duration * 0.001;
+		std::cout << "Timer2 alive: " << ms << " ms" << std::endl;
+	}
+
+	// ~ : ALT + 126
+	~Timer2()
+	{
+		stop();
+	}
+};
+
 void Function()
 {
 	Timer timer;
@@ -35,7 +63,7 @@ void Function()
 
 void Function2()
 {
-	Timer timer;
+	Timer2 timer;
 
 	for ( int i = 0; i < 500; i++ )
 	{
