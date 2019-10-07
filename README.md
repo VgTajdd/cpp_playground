@@ -1,2 +1,2 @@
-# cpp_playground
-Basics tests and demos written in c++
+# C++ playground
+Basic tests and demos written in c++
