@@ -13,5 +13,7 @@ int main()
 	//delete a;		// It works.
 	delete b;		// It works.
 
+	__debugbreak();
+
 	return 0;
 }
