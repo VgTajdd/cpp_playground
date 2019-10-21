@@ -52,7 +52,7 @@ public:
 		std::cout << "Hello!" << std::endl;
 	}
 
-	~BaseObject()
+	virtual ~BaseObject()
 	{
 		std::cout << "Destroyed BaseObject" << std::endl;
 	}
@@ -77,6 +77,13 @@ int main()
 	{
 		BaseObject a;
 		DerivedObject b;
+	}
+
+	std::cout << std::endl << std::endl;
+
+	{
+		BaseObject* heap_object = new DerivedObject();
+		delete heap_object; // To destroy not only BaseObject but DerivedObject the BaseObject destructor MUST be virtual.
 	}
 
 	std::cout << std::endl << std::endl;
