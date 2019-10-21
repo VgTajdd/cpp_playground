@@ -10,8 +10,8 @@ int main()
 
 	//free( a );	// It works but is necessary to include stdlib.h
 	//free( b );
-	//delete a;		// It works.
-	delete b;		// It works.
+	//delete a[];		// It works.
+	delete[] b;		// It works.
 
 	__debugbreak();
 
