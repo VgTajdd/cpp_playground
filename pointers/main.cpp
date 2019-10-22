@@ -3,6 +3,25 @@
 int main()
 {
 	{
+		bool* boolptr = new bool( false );
+		delete boolptr;
+
+		int* intptr = new int( 10 );
+		delete intptr;
+
+		void* tempPtr1 = new int( 1 );
+		delete tempPtr1;
+
+		void* tempPtr2 = new double( 2.0 );
+		delete tempPtr2;
+
+		void* tempPtr3 = new bool( false );
+		delete tempPtr3;
+
+		__debugbreak();
+	}
+
+	{
 		const int a = 5;
 		int b = 2;
 		int c = 3;
