@@ -43,7 +43,7 @@ int main()
 	std::vector<std::string> loadedData;
 
 #define ASYNC_LOAD 1
-#ifdef ASYNC_LOAD
+#if ASYNC_LOAD
 	testAsyncLoading( inputs, loadedData );
 #else
 	for ( const auto& input : inputs )
