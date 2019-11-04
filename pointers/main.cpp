@@ -22,6 +22,18 @@ int main()
 	}
 
 	{
+		int a[] = { 1, 2 };
+		int* b = a;
+		std::cout << &a[0] << std::endl;	// memory address of the first element of array a
+		std::cout << &a[1] << std::endl;	// memory address of the second element of array a
+		std::cout << &a << std::endl;		// memory address of the first element of array a
+		std::cout << &b << std::endl;		// memory address of the first element of pointer b <<-- IMPORTANT
+		std::cout << b[0] << std::endl;		// a[0]
+		std::cout << b[1] << std::endl;		// a[1]
+		__debugbreak();
+	}
+
+	{
 		const int a = 5;
 		int b = 2;
 		int c = 3;
