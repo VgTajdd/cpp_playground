@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "assert", "assert\assert.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "std_vector(dynamic_array)", "std_vector(dynamic_array)\std_vector(dynamic_array).vcxproj", "{6781E693-946D-4CAD-A3D5-650532EA7343}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "heaps", "heaps\heaps.vcxproj", "{ED654B05-6EA7-4E51-8275-86EA8C818822}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -121,6 +123,14 @@ Global
 		{6781E693-946D-4CAD-A3D5-650532EA7343}.Release|x64.Build.0 = Release|x64
 		{6781E693-946D-4CAD-A3D5-650532EA7343}.Release|x86.ActiveCfg = Release|Win32
 		{6781E693-946D-4CAD-A3D5-650532EA7343}.Release|x86.Build.0 = Release|Win32
+		{ED654B05-6EA7-4E51-8275-86EA8C818822}.Debug|x64.ActiveCfg = Debug|x64
+		{ED654B05-6EA7-4E51-8275-86EA8C818822}.Debug|x64.Build.0 = Debug|x64
+		{ED654B05-6EA7-4E51-8275-86EA8C818822}.Debug|x86.ActiveCfg = Debug|Win32
+		{ED654B05-6EA7-4E51-8275-86EA8C818822}.Debug|x86.Build.0 = Debug|Win32
+		{ED654B05-6EA7-4E51-8275-86EA8C818822}.Release|x64.ActiveCfg = Release|x64
+		{ED654B05-6EA7-4E51-8275-86EA8C818822}.Release|x64.Build.0 = Release|x64
+		{ED654B05-6EA7-4E51-8275-86EA8C818822}.Release|x86.ActiveCfg = Release|Win32
+		{ED654B05-6EA7-4E51-8275-86EA8C818822}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
