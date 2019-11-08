@@ -56,6 +56,34 @@ void printHeap( int arr[], int n )
 	cout << "\n";
 }
 
+void replaceInHeap( int arr[], int n, int newValue )
+{
+	if ( newValue >= arr[0] )
+	{
+		return;
+	}
+	arr[0] = newValue;
+	heapify( arr, n, 0 );
+}
+
+// Find the lower k values in array using a heap
+void getKLowestValues( int arr[], const int n, int values[], const int k )
+{
+	if ( k == 1 )
+	{
+		arr[0] = 0; // Linear search, tc O(n).
+		return;
+	}
+
+	std::copy( arr, arr + k, values );
+	buildHeap( values, k ); // Max Heap
+
+	for ( int i = k; i < n; i++ )
+	{
+		replaceInHeap( values, k, arr[i] );
+	}
+}
+
 // Driver Code
 int main()
 {
@@ -83,6 +111,15 @@ int main()
 	//      9      6    5   10
 	//     / \    /  \
 	//    4   8  3    1
+
+
+	std::cout << std::endl << std::endl;
+
+	int arr2[] = { 2, 10, 1, 0, 3, 4, 9, 1 };
+	n = sizeof( arr2 ) / sizeof( arr[0] );
+	const int countValues = 3;
+	int values[countValues];
+	getKLowestValues( arr2, n, values, countValues );
 
 	std::cin.get();
 
