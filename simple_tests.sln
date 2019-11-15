@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "std_vector(dynamic_array)",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "heaps", "heaps\heaps.vcxproj", "{ED654B05-6EA7-4E51-8275-86EA8C818822}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bst", "bst\bst.vcxproj", "{C3DC6147-50A4-45C7-B7D9-510280811B35}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -131,6 +133,14 @@ Global
 		{ED654B05-6EA7-4E51-8275-86EA8C818822}.Release|x64.Build.0 = Release|x64
 		{ED654B05-6EA7-4E51-8275-86EA8C818822}.Release|x86.ActiveCfg = Release|Win32
 		{ED654B05-6EA7-4E51-8275-86EA8C818822}.Release|x86.Build.0 = Release|Win32
+		{C3DC6147-50A4-45C7-B7D9-510280811B35}.Debug|x64.ActiveCfg = Debug|x64
+		{C3DC6147-50A4-45C7-B7D9-510280811B35}.Debug|x64.Build.0 = Debug|x64
+		{C3DC6147-50A4-45C7-B7D9-510280811B35}.Debug|x86.ActiveCfg = Debug|Win32
+		{C3DC6147-50A4-45C7-B7D9-510280811B35}.Debug|x86.Build.0 = Debug|Win32
+		{C3DC6147-50A4-45C7-B7D9-510280811B35}.Release|x64.ActiveCfg = Release|x64
+		{C3DC6147-50A4-45C7-B7D9-510280811B35}.Release|x64.Build.0 = Release|x64
+		{C3DC6147-50A4-45C7-B7D9-510280811B35}.Release|x86.ActiveCfg = Release|Win32
+		{C3DC6147-50A4-45C7-B7D9-510280811B35}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
