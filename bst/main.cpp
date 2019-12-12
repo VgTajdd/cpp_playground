@@ -56,6 +56,26 @@ struct BST
 		}
 		return true;
 	}
+
+	int height( Node* root )
+	{
+		// Write your code here.
+		if ( root == nullptr )
+		{
+			return 0;
+		}
+		auto h_l = height( root->left );
+		auto h_r = height( root->right );
+		return 1 + ( ( h_l > h_r ) ? h_l : h_r );
+	}
+
+	int height()
+	{
+		return height( this->head );
+	}
+
+	// Breath first traversal.
+
 	std::vector< int > bft()
 	{
 		std::vector< int > visitedNodes;
@@ -82,6 +102,53 @@ struct BST
 		}
 		return visitedNodes;
 	}
+
+	// Depth first traversals.
+
+	std::vector< int > getTraversal( const int type )
+	{
+		std::vector< int > sortedArray;
+		switch ( type )
+		{
+			case 0: preorder( this->head, sortedArray ); break;
+			case 1: inorder( this->head, sortedArray ); break;
+			case 2: postorder( this->head, sortedArray ); break;
+		}
+		return sortedArray;
+	}
+private:
+	void inorder( Node* node, std::vector< int >& buffer )
+	{
+		if ( node == nullptr )
+		{
+			return;
+		}
+		inorder( node->left, buffer );
+		buffer.push_back( node->value );
+		inorder( node->right, buffer );
+	}
+
+	void preorder( Node* node, std::vector< int >& buffer )
+	{
+		if ( node == nullptr )
+		{
+			return;
+		}
+		buffer.push_back( node->value );
+		preorder( node->left, buffer );
+		preorder( node->right, buffer );
+	}
+
+	void postorder( Node* node, std::vector< int >& buffer )
+	{
+		if ( node == nullptr )
+		{
+			return;
+		}
+		postorder( node->left, buffer );
+		postorder( node->right, buffer );
+		buffer.push_back( node->value );
+	}
 };
 
 int main()
@@ -94,8 +161,18 @@ int main()
 	t.insert( 2 );
 	t.insert( 7 );
 
+	std::cout << "Height of tree: " << t.height() << std::endl;
+
 	auto traversal = t.bft();
 	for ( auto n : traversal )
+	{
+		std::cout << n << " ";
+	}
+
+	std::cout << std::endl;
+
+	auto sortedArray = t.getTraversal( 1 );
+	for ( auto n : sortedArray )
 	{
 		std::cout << n << " ";
 	}
