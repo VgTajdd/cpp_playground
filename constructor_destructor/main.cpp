@@ -115,7 +115,7 @@ int main()
 		std::unique_ptr<DerivedObject> t = std::make_unique<DerivedObject>();
 		auto raw_ptr = t.get();
 		t->sayHello();
-		t.release(); // Use this to reasing new object to unique pointer
+		t.release(); // Use this to releasing new object to unique pointer
 		t = std::make_unique<DerivedObject>();
 		delete raw_ptr;
 	}
