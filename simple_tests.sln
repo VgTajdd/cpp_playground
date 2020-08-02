@@ -29,6 +29,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "heaps", "heaps\heaps.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bst", "bst\bst.vcxproj", "{C3DC6147-50A4-45C7-B7D9-510280811B35}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "move_semantics", "move_semantics\move_semantics.vcxproj", "{322FB790-A3D6-4434-8FA5-0C9C3BD863AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -141,6 +143,14 @@ Global
 		{C3DC6147-50A4-45C7-B7D9-510280811B35}.Release|x64.Build.0 = Release|x64
 		{C3DC6147-50A4-45C7-B7D9-510280811B35}.Release|x86.ActiveCfg = Release|Win32
 		{C3DC6147-50A4-45C7-B7D9-510280811B35}.Release|x86.Build.0 = Release|Win32
+		{322FB790-A3D6-4434-8FA5-0C9C3BD863AB}.Debug|x64.ActiveCfg = Debug|x64
+		{322FB790-A3D6-4434-8FA5-0C9C3BD863AB}.Debug|x64.Build.0 = Debug|x64
+		{322FB790-A3D6-4434-8FA5-0C9C3BD863AB}.Debug|x86.ActiveCfg = Debug|Win32
+		{322FB790-A3D6-4434-8FA5-0C9C3BD863AB}.Debug|x86.Build.0 = Debug|Win32
+		{322FB790-A3D6-4434-8FA5-0C9C3BD863AB}.Release|x64.ActiveCfg = Release|x64
+		{322FB790-A3D6-4434-8FA5-0C9C3BD863AB}.Release|x64.Build.0 = Release|x64
+		{322FB790-A3D6-4434-8FA5-0C9C3BD863AB}.Release|x86.ActiveCfg = Release|Win32
+		{322FB790-A3D6-4434-8FA5-0C9C3BD863AB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
