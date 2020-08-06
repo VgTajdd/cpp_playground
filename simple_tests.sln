@@ -31,6 +31,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bst", "bst\bst.vcxproj", "{
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "move_semantics", "move_semantics\move_semantics.vcxproj", "{322FB790-A3D6-4434-8FA5-0C9C3BD863AB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "graphs", "graphs\graphs.vcxproj", "{E3AD00A2-4667-4E6E-B307-0EFB425C3F47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -151,6 +153,14 @@ Global
 		{322FB790-A3D6-4434-8FA5-0C9C3BD863AB}.Release|x64.Build.0 = Release|x64
 		{322FB790-A3D6-4434-8FA5-0C9C3BD863AB}.Release|x86.ActiveCfg = Release|Win32
 		{322FB790-A3D6-4434-8FA5-0C9C3BD863AB}.Release|x86.Build.0 = Release|Win32
+		{E3AD00A2-4667-4E6E-B307-0EFB425C3F47}.Debug|x64.ActiveCfg = Debug|x64
+		{E3AD00A2-4667-4E6E-B307-0EFB425C3F47}.Debug|x64.Build.0 = Debug|x64
+		{E3AD00A2-4667-4E6E-B307-0EFB425C3F47}.Debug|x86.ActiveCfg = Debug|Win32
+		{E3AD00A2-4667-4E6E-B307-0EFB425C3F47}.Debug|x86.Build.0 = Debug|Win32
+		{E3AD00A2-4667-4E6E-B307-0EFB425C3F47}.Release|x64.ActiveCfg = Release|x64
+		{E3AD00A2-4667-4E6E-B307-0EFB425C3F47}.Release|x64.Build.0 = Release|x64
+		{E3AD00A2-4667-4E6E-B307-0EFB425C3F47}.Release|x86.ActiveCfg = Release|Win32
+		{E3AD00A2-4667-4E6E-B307-0EFB425C3F47}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
