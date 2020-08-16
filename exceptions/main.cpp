@@ -27,6 +27,20 @@ public:
     }
 };
 
+class A
+{
+public:
+    A() {};
+    ~A() noexcept( false ) // Destructors are by defualt noexecpt, so this ('noexcept(false)') will turn-off the compiler warning.
+    {
+        throw std::exception{}; // AVOID THROW EXCEPTIONS OUT OF DESTRUCTORS because destructors are called
+                                // during stack unwinding when an exception is thrown,
+                                // and we are not allowed to throw another exception while the previous one is
+                                // not caught – in such a case std::terminate will be called.
+                                // http://www.vishalchovatiya.com/7-best-practices-for-exception-handling-in-cpp-with-example/
+    }
+};
+
 // Custom exception.
 struct MyException : public std::exception
 {
@@ -73,6 +87,15 @@ int main()
         {
             std::cout << "An exception occurred!" << std::endl; // this executes if division() throws std::string or int or any other unrelated type
         }
+    }
+
+    // Exceptions in destructors.
+    {
+        try
+        {
+            A a;
+        }
+        catch ( ... ) {}
     }
 
     std::cout << "----------------" << std::endl;
