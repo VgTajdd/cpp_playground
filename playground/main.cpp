@@ -1,5 +1,9 @@
 #include <iostream>
 
+#include <string>
+#include <sstream>
+#include <time.h>
+
 struct my_struct_t
 {
 	bool dummyBoolean;	// 1 byte
@@ -25,7 +29,7 @@ public:
 
 int main()
 {
-//#if 0
+#if 0
 	my_struct_t* bar;
 	my_struct_t temp = my_struct_t{ false, 0.5 };
 	bar = &temp;
@@ -45,7 +49,7 @@ int main()
 		// Points to the whole array b
 		a = &b;
 
-		printf( "%d\n", (int)sizeof( a ) ); // 4
+		printf( "%d\n", (int) sizeof( a ) ); // 4
 		printf( "%d\n", (int) sizeof( *a ) ); // 20
 
 		printf( "%p\n", a );
@@ -79,7 +83,48 @@ int main()
 
 	}
 	std::cin.get();
-//#endif
+#endif
+
+	// Random numbers
+	{
+		srand( time( 0 ) ); // Seed initialization.
+		for ( int i = 0; i < 5; i++ )
+			std::cout << rand() /*/ (float)RAND_MAX*/ << std::endl;
+	}
+	std::cin.get();
+
+	// Conversion between numbers and std::strings.
+	{
+		int a = std::atoi( "25" );
+		int b = std::atoi( "" );
+		int c = std::atoi( "asd" );
+		int d = std::stoi( "53.8" );
+		int e = std::stof( "53.8" );
+		auto str_a = std::to_string( a );
+		std::cout << str_a + ", this was your number" << std::endl;
+
+		// Take care of the exceptions!
+		try
+		{
+			int f = std::stoi( "2147483648" ); // INT_MAX = 2147483647
+		}
+		catch( const std::exception& e )
+		{
+			std::cout << "An exception was thrown!: " << e.what() << std::endl;
+		}
+	}
+	std::cin.get();
+
+	// Use of sstream.
+	{
+		std::stringstream ss;
+		ss << 4.5;
+		ss << ", my numer is ";
+		ss << 4;
+		auto std_string = ss.str();
+		std::cout << std_string << std::endl;
+	}
+	std::cin.get();
 
 	return 0;
 }
