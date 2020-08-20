@@ -23,6 +23,7 @@
     <ProjectGuid>{6781E693-946D-4CAD-A3D5-650532EA7343}</ProjectGuid>
     <RootNamespace>stdvectordynamicarray</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>std_vector_dynamic_array</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

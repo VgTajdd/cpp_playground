@@ -23,6 +23,7 @@
     <ProjectGuid>{061B478B-2863-4A65-8141-91FD02E82C3C}</ProjectGuid>
     <RootNamespace>maps</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>std_maps</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
