@@ -87,6 +87,20 @@ bool IsSameClass()
 
 //--------------------------------------------------------
 
+template<int n> struct funStruct
+{
+	// val is static because this need to be evaluated at compile time, like the template.
+	// val also can be: enum { val = 2*funStruct<n-1>::val };
+	const static int val = 2 * funStruct<n - 1>::val;
+};
+
+template<> struct funStruct<0> // Specialization.
+{
+	const static int val = 1;
+};
+
+//--------------------------------------------------------
+
 int main()
 {
 	int a[] = { 2, 1, 5, 9 };
@@ -94,6 +108,12 @@ int main()
 	returnProductArray( a, b );
 	returnProductArray2( a, b );
 	for ( int i = 0; i < 4; i++ ) std::cout << b[i] << " ";
+
 	std::cin.get();
+
+	std::cout << funStruct<8>::val << std::endl;
+
+	std::cin.get();
+
 	return 0;
 }
