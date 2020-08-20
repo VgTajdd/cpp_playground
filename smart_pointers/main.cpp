@@ -83,7 +83,7 @@ int main()
 
 	// First way to create a shared pointer.
 	{
-		// This way to create shared pointer si exception safe.
+		// This way to create shared pointer is exception safe.
 		auto entity = std::make_shared< Entity >( "E1" );
 	}
 	// Alternative way to create shared pointer.
