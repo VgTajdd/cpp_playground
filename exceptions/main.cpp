@@ -41,6 +41,15 @@ public:
     }
 };
 
+struct base
+{
+    ~base() noexcept( false ) { throw 1; }
+};
+struct derive : base
+{
+    ~derive() noexcept( false ) { throw 2; }
+};
+
 // Custom exception.
 struct MyException : public std::exception
 {
@@ -98,11 +107,23 @@ int main()
         catch ( ... ) {}
     }
 
+#if 0
+    // An exception will be thrown when the object d will be destroyed as a result of RAII.
+    // But at the same time destructor of base will also be called as it is sub - object of derive
+    // which will again throw an exception.Now we have two exceptions at the same time which
+    // is invalid scenario & std::terminate will be called.
+    {
+        try
+        {
+            derive a;
+        }
+        catch ( ... ) {}
+    }
+#endif
+
     std::cout << "----------------" << std::endl;
     std::cout << "Exception safety" << std::endl;
     std::cout << "----------------" << std::endl;
-
-    // https://en.cppreference.com/w/cpp/language/try_catch
 
     // This code is exception safe.
     {
