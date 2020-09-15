@@ -47,6 +47,13 @@ AutoTimer::AutoTimer( const std::string& name ) :
 #endif
 }
 
+// Your compiler will only check that you don’t change the value of the m_impl
+// pointer in a const method, but not whether you change any members pointed to by m_impl.
+void AutoTimer::constMethod() const
+{
+	m_impl->m_name = "string changed by a const method";
+}
+
 AutoTimer::~AutoTimer()
 {
 	std::cout << m_impl->m_name << ": took " << m_impl->GetElapsed() << " secs" << std::endl;

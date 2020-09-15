@@ -9,6 +9,9 @@ class AutoTimer
 public:
 	explicit AutoTimer( const std::string& name );
 	~AutoTimer();
+
+	void constMethod() const;
+
 private:
 	// Make this object be non copyable (only if using raw pointer)
 	/*AutoTimer( const AutoTimer& );
