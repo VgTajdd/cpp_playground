@@ -1,6 +1,6 @@
 
 // free(): is C method		(Is it necessary to use C in your C++ app?)
-// delete: is C++ operator	(faster because is a operator)
+// delete: is C++ operator
 
 int main()
 {

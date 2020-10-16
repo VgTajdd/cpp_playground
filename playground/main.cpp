@@ -119,7 +119,7 @@ int main()
 	{
 		std::stringstream ss;
 		ss << 4.5;
-		ss << ", my numer is ";
+		ss << ", my number is ";
 		ss << 4;
 		auto std_string = ss.str();
 		std::cout << std_string << std::endl;

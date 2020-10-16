@@ -31,7 +31,8 @@ public:
 		printf( "[CONSTRUCTOR] Copied String: '%s'\n", m_data );
 	}
 
-	String( String&& other ) // MOVE CONSTRUCTOR
+	// https://rules.sonarsource.com/cpp/tag/cpp11/RSPEC-5018
+	String( String&& other ) noexcept // MOVE CONSTRUCTOR
 	{
 		m_size = other.m_size;
 		m_data = other.m_data;
@@ -112,7 +113,7 @@ public:
 
 	Entity( String&& name ) :
 		m_name( std::move( name ) )
-	{ } 
+	{ }
 
 	void printName()
 	{
