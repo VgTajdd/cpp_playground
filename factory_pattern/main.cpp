@@ -11,15 +11,13 @@ public:
 	void SetCameraPosition( double x, double y, double z ) {}
 	void SetLookAt( double x, double y, double z ) {}
 	void Render() { std::cout << "User Render" << std::endl; }
-	static IRenderer* Create() { return new UserRenderer(); }
+	CREATE_METHOD( UserRenderer )
 };
 
 int main( int, char** )
 {
-	// Register a new renderer.
-	RendererFactory::RegisterRenderer( "user", UserRenderer::Create );
-	// Create an instance of our new renderer.
-	IRenderer* r = RendererFactory::CreateRenderer( "user" );
+	RF_REGISTER_RENDERER( UserRenderer ) // Register a new renderer.
+	IRenderer* r =  RF_CREATE_RENDERER( UserRenderer ) // Create an instance of our new renderer.
 	r->Render();
 	delete r;
 	return 0;

@@ -1,5 +1,7 @@
 #include "rendererfactory.h"
 
+#include "IRenderer.h"
+
 // Instantiate the static variable in RendererFactory.
 RendererFactory::CallbackMap RendererFactory::m_renderers;
 

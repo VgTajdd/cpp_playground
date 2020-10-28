@@ -1,4 +1,5 @@
-#pragma once
+#ifndef IRENDERER_H_
+#define IRENDERER_H_
 
 #include <string>
 
@@ -12,3 +13,5 @@ public:
 	virtual void SetLookAt( double x, double y, double z ) = 0;
 	virtual void Render() = 0;
 };
+
+#endif // !IRENDERER_H_
