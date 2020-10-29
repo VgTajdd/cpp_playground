@@ -61,6 +61,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "observer_pattern", "observe
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "factory_pattern", "factory_pattern\factory_pattern.vcxproj", "{047215AE-28FF-4F44-8AEE-D541859EEC43}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "patterns", "patterns", "{D449DA6E-48ED-4336-BDA0-D601559162CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -304,6 +306,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FE5FAC92-49F5-4076-883C-97CA81A31D1D} = {D449DA6E-48ED-4336-BDA0-D601559162CE}
+		{4011CA86-DAF0-411F-8056-C600E87EB160} = {D449DA6E-48ED-4336-BDA0-D601559162CE}
+		{047215AE-28FF-4F44-8AEE-D541859EEC43} = {D449DA6E-48ED-4336-BDA0-D601559162CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {22DB0F52-C137-4B5C-BADA-3E0ACAA5BC00}
