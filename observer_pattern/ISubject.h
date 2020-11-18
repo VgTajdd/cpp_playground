@@ -1,4 +1,5 @@
-#pragma once
+#ifndef I_SUBJECT_H_
+#define I_SUBJECT_H_
 
 #include <map>
 #include <vector>
@@ -19,3 +20,5 @@ private:
 	typedef std::map<int, ObserverList> ObserverMap;
 	ObserverMap mObservers;
 };
+
+#endif // !I_SUBJECT_H_

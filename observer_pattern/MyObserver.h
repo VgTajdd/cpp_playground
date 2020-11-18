@@ -1,4 +1,5 @@
-#pragma once
+#ifndef MY_OBSERVER_H_
+#define MY_OBSERVER_H_
 
 #include <iostream>
 
@@ -19,3 +20,5 @@ public:
 private:
 	std::string mName;
 };
+
+#endif // !MY_OBSERVER_H_
