@@ -15,13 +15,16 @@ void RendererFactory::UnregisterRenderer( const std::string& type )
 	m_renderers.erase( type );
 }
 
-IRenderer* RendererFactory::CreateRenderer( const std::string& type )
+std::unique_ptr<IRenderer> RendererFactory::CreateRenderer( const std::string& type )
 {
+	std::unique_ptr<IRenderer> ptr;
+
 	CallbackMap::iterator it = m_renderers.find( type );
 	if ( it != m_renderers.end() )
 	{
 		// Call the creation callback to construct this derived type.
-		return it->second();
+		ptr = it->second();
 	}
-	return NULL;
+
+	return ptr;
 }

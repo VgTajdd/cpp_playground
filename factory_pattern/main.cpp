@@ -17,8 +17,20 @@ public:
 int main( int, char** )
 {
 	RF_REGISTER_RENDERER( UserRenderer ) // Register a new renderer.
-	IRenderer* r =  RF_CREATE_RENDERER( UserRenderer ) // Create an instance of our new renderer.
-	r->Render();
-	delete r;
+	std::unique_ptr<IRenderer> renderer =  RF_CREATE_RENDERER( UserRenderer ) // Create an instance of our new renderer.
+	if ( renderer.get() != nullptr )
+	{
+		renderer->Render();
+	}
+
+	// Testing unregistered type.
+	std::unique_ptr<IRenderer> unregisteredRenderer = RF_CREATE_RENDERER( UnregisteredRenderer )
+	if ( unregisteredRenderer.get() != nullptr )
+	{
+		unregisteredRenderer->Render();
+	}
+
+	std::cin.get();
+
 	return 0;
 }
