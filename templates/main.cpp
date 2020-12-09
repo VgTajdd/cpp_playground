@@ -87,16 +87,36 @@ bool IsSameClass()
 
 //--------------------------------------------------------
 
-template<int n> struct funStruct
+// Pow 2^n.
+template<unsigned int n> struct Pow2Struct
 {
 	// val is static because this need to be evaluated at compile time, like the template.
 	// val also can be: enum { val = 2*funStruct<n-1>::val };
-	const static int val = 2 * funStruct<n - 1>::val;
+	const static int val = 2 * Pow2Struct<n - 1>::val;
 };
 
-template<> struct funStruct<0> // Specialization.
+template<> struct Pow2Struct<0> // Specialization.
 {
 	const static int val = 1;
+};
+
+//--------------------------------------------------------
+
+// Fibonacci.
+template<unsigned int n> struct FiboStruct
+{
+	// val is static because this need to be evaluated at compile time, like the template.
+	const static int val = FiboStruct<n - 2>::val + FiboStruct<n - 1>::val;
+};
+
+template<> struct FiboStruct<1> // Specialization.
+{
+	const static int val = 1;
+};
+
+template<> struct FiboStruct<0> // Specialization.
+{
+	const static int val = 0;
 };
 
 //--------------------------------------------------------
@@ -104,14 +124,15 @@ template<> struct funStruct<0> // Specialization.
 int main()
 {
 	int a[] = { 2, 1, 5, 9 };
-	int b[] = { 1,1,1,1 };
+	int b[] = { 1, 1, 1, 1 };
 	returnProductArray( a, b );
 	returnProductArray2( a, b );
 	for ( int i = 0; i < 4; i++ ) std::cout << b[i] << " ";
 
 	std::cin.get();
 
-	std::cout << funStruct<8>::val << std::endl;
+	std::cout << Pow2Struct<20>::val << std::endl;
+	std::cout << FiboStruct<20>::val << std::endl;
 
 	std::cin.get();
 
