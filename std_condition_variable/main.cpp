@@ -1,5 +1,7 @@
 // https://riptutorial.com/cplusplus/example/13552/using-condition-variables
 
+#if 0
+
 #include <condition_variable>
 #include <cstddef>
 #include <iostream>
@@ -91,3 +93,5 @@ int main()
 
     return 0;
 }
+
+#endif
