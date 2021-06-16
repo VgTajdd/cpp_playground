@@ -3,7 +3,9 @@
 #include <algorithm>
 #include <vector>
 
-void ForEach( const std::vector< int >& values, const std::function< void( int ) >& func )
+// https://stackoverflow.com/questions/39428437/stdfunction-vs-lambda-for-passing-member-functions
+
+void forEach( const std::vector< int >& values, const std::function< void( int ) >& func )
 {
 	for ( const int& value : values )
 	{
@@ -25,7 +27,7 @@ int main()
 	std::cout << std::endl;
 
 	auto lambda = [=]( int value ) { std::cout << "Value: " << value << std::endl; };
-	ForEach( values, lambda );
+	forEach( values, lambda );
 
 	std::cin.get();
 	return 0;
