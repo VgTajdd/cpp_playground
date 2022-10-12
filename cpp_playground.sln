@@ -67,6 +67,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "variadics", "variadics\vari
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "crtp", "crtp\crtp.vcxproj", "{A96A91A8-28B7-4CFA-83E2-53279B814FAA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "std_string_view", "std_string_view\std_string_view.vcxproj", "{61CB3875-8411-4C9B-959E-E15530E52168}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -323,6 +325,14 @@ Global
 		{A96A91A8-28B7-4CFA-83E2-53279B814FAA}.Release|x64.Build.0 = Release|x64
 		{A96A91A8-28B7-4CFA-83E2-53279B814FAA}.Release|x86.ActiveCfg = Release|Win32
 		{A96A91A8-28B7-4CFA-83E2-53279B814FAA}.Release|x86.Build.0 = Release|Win32
+		{61CB3875-8411-4C9B-959E-E15530E52168}.Debug|x64.ActiveCfg = Debug|x64
+		{61CB3875-8411-4C9B-959E-E15530E52168}.Debug|x64.Build.0 = Debug|x64
+		{61CB3875-8411-4C9B-959E-E15530E52168}.Debug|x86.ActiveCfg = Debug|Win32
+		{61CB3875-8411-4C9B-959E-E15530E52168}.Debug|x86.Build.0 = Debug|Win32
+		{61CB3875-8411-4C9B-959E-E15530E52168}.Release|x64.ActiveCfg = Release|x64
+		{61CB3875-8411-4C9B-959E-E15530E52168}.Release|x64.Build.0 = Release|x64
+		{61CB3875-8411-4C9B-959E-E15530E52168}.Release|x86.ActiveCfg = Release|Win32
+		{61CB3875-8411-4C9B-959E-E15530E52168}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
