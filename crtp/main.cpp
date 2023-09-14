@@ -12,14 +12,14 @@ typedef std::chrono::high_resolution_clock Clock;
 class Dimension
 {
 public:
-    Dimension( int _X, int _Y )
-    {
-        mX = _X;
-        mY = _Y;
-    }
+	Dimension( int _X, int _Y )
+	{
+		mX = _X;
+		mY = _Y;
+	}
 
 private:
-    int mX, mY;
+	int mX, mY;
 };
 
 // Base class for all image types. The template
@@ -29,34 +29,34 @@ template <class T>
 class Image
 {
 public:
-    void Draw()
-    {
-        // Dispatch call to exact type
-        static_cast<T*>( this )->Draw();
-    }
-    Dimension GetDimensionInPixels()
-    {
-        // Dispatch call to exact type
-        static_cast<T*>( this )->GetDimensionInPixels();
-    }
+	void Draw()
+	{
+		// Dispatch call to exact type
+		static_cast<T*>( this )->Draw();
+	}
+	Dimension GetDimensionInPixels()
+	{
+		// Dispatch call to exact type
+		static_cast<T*>( this )->GetDimensionInPixels();
+	}
 
 protected:
-    int dimensionX, dimensionY;
+	int dimensionX, dimensionY;
 };
 
 // For Tiff Images
 class TiffImage : public Image<TiffImage>
 {
 public:
-    void Draw()
-    {
-        // Uncomment this to check method dispatch
-        // cout << "TiffImage::Draw() called" << endl;
-    }
-    Dimension GetDimensionInPixels()
-    {
-        return Dimension( dimensionX, dimensionY );
-    }
+	void Draw()
+	{
+		// Uncomment this to check method dispatch
+		// cout << "TiffImage::Draw() called" << endl;
+	}
+	Dimension GetDimensionInPixels()
+	{
+		return Dimension( dimensionX, dimensionY );
+	}
 };
 
 // There can be more derived classes like PngImage,
@@ -65,23 +65,23 @@ public:
 // Driver code
 int main()
 {
-    // An Image type pointer pointing to Tiffimage
-    Image<TiffImage>* pImage = new TiffImage;
+	// An Image type pointer pointing to Tiffimage
+	Image<TiffImage>* pImage = new TiffImage;
 
-    // Store time before virtual function calls
-    auto then = Clock::now();
+	// Store time before virtual function calls
+	auto then = Clock::now();
 
-    // Call Draw 1000 times to make sure performance
-    // is visible
-    for ( int i = 0; i < 1000; ++i )
-        pImage->Draw();
+	// Call Draw 1000 times to make sure performance
+	// is visible
+	for ( int i = 0; i < 1000; ++i )
+		pImage->Draw();
 
-    // Store time after virtual function calls
-    auto now = Clock::now();
+	// Store time after virtual function calls
+	auto now = Clock::now();
 
-    cout << "Time taken: "
-        << std::chrono::duration_cast<std::chrono::nanoseconds>( now - then ).count()
-        << " nanoseconds" << endl;
+	cout << "Time taken: "
+		<< std::chrono::duration_cast<std::chrono::nanoseconds>( now - then ).count()
+		<< " nanoseconds" << endl;
 
-    return 0;
+	return 0;
 }
