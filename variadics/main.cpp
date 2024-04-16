@@ -13,7 +13,7 @@ void print0()
 template <typename T, typename... Types>
 void print0( T var1, Types... var2 )
 {
-    std::cout << var1 << std::endl;
+    std::cout << var1 << '\n';
 
     print0( var2... );
 }
@@ -23,30 +23,30 @@ void print0( T var1, Types... var2 )
 template <typename T>
 void print1( T var )
 {
-    std::cout << var << std::endl;
+    std::cout << var << '\n';
 }
 
 template <typename T, typename... Types>
 void print1( T var1, Types... var2 )
 {
-    std::cout << var1 << std::endl;
+    std::cout << var1 << '\n';
 
     print1( var2... );
 }
 
 int main()
 {
-    std::cout << " ---- TEST 1 ----" << std::endl;
+    std::cout << " ---- TEST 1 ----\n";
 
     print0( 1, 2, 3.14, "Pass me any "
            "number of arguments",
-           "I will print\n" );
+           "I will print" );
 
-    std::cout << "\n ---- TEST 2 ----" << std::endl;
+    std::cout << "\n\n ---- TEST 2 ----\n";
 
     print1( 1, 2, 3.14, "Pass me any "
             "number of arguments",
-            "I will print\n" );
+            "I will print" );
 
     std::cin.get();
     return 0;
